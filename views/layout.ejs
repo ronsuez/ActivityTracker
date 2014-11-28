@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>New Sails App</title>
+
+  <!-- Viewport mobile tag for sensible mobile support -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    <!--  
+        Stylesheets and Preprocessors
+        ==============================
+
+        You can always bring in CSS files manually with `<link>` tags, or asynchronously
+        using a solution like AMD (RequireJS).  Or, if you like, you can take advantage 
+        of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+        By default, stylesheets from your `assets/styles` folder are included
+        here automatically (between STYLES and STYLES END). Both CSS (.css) and LESS (.less)
+        are supported. In production, your styles will be minified and concatenated into
+        a single file.
+        
+        To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+            
+            + Change the order of your CSS files
+            + Import stylesheets from other directories
+            + Use a different or additional preprocessor, like SASS, SCSS or Stylus
+          -->
+
+          <!--STYLES-->
+          <link rel="stylesheet" href="/styles/foundation5/foundation.css">
+          <link rel="stylesheet" href="/styles/foundation5/normalize.css">
+          <link rel="stylesheet" href="/styles/importer.css">
+          <!--STYLES END-->
+        </head>
+
+        <body>
+          <nav class="top-bar" data-topbar role="navigation"> <ul class="title-area"> <li class="name"> <h1><a href="#">My Site</a></h1> </li> <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone --> <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li> </ul> <section class="top-bar-section"> <!-- Right Nav Section --> <ul class="right"> <li class="active"><a href="#">Right Button Active</a></li> <li class="has-dropdown"> <a href="#">Right Button Dropdown</a> <ul class="dropdown"> <li><a href="#">First link in dropdown</a></li> <li class="active"><a href="#">Active link in dropdown</a></li> </ul> </li> </ul> <!-- Left Nav Section --> <ul class="left"> <li><a href="#">Left Nav Button</a></li> </ul> </section> </nav>
+
+
+          <%- body %>
+
+
+
+    <!--
+        Client-side Templates
+        ========================
+
+        HTML templates are important prerequisites of modern, rich client applications.
+        To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
+        that you load these templates client-side.
+
+        By default, your Gruntfile is configured to automatically load and precompile
+        client-side JST templates in your `assets/templates` folder, then
+        include them here automatically (between TEMPLATES and TEMPLATES END).
+        
+        To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Import templates from other directories
+            + Use a different template engine (handlebars, jade, dust, etc.)
+            + Internationalize your client-side templates using a server-side
+              stringfile before they're served.
+            -->
+
+            <!--TEMPLATES-->
+            
+            <!--TEMPLATES END-->
+
+            <footer class="row">
+              <div class="large-12 columns">
+                <hr>
+                <div class="row">
+                  <div class="large-6 columns">
+                    <p>© Copyright no one at all. Go to town.</p>
+                  </div>
+                  <div class="large-6 columns">
+                    <ul class="inline-list right">
+                      <li><a href="#">Link 1</a></li>
+                      <li><a href="#">Link 2</a></li>
+                      <li><a href="#">Link 3</a></li>
+                      <li><a href="#">Link 4</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>              
+            </footer>
+    <!--
+
+      Client-side Javascript
+      ========================
+
+      You can always bring in JS files manually with `script` tags, or asynchronously
+      on the client using a solution like AMD (RequireJS).  Or, if you like, you can 
+      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+      By default, files in your `assets/js` folder are included here
+      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+      and concatenated into a single file.
+      
+      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+      For example, here are a few things you could do:
+          
+          + Change the order of your scripts
+          + Import scripts from other directories
+          + Use a different preprocessor, like TypeScript
+
+        -->
+
+        <!--SCRIPTS-->
+        <script src="/js/dependencies/sails.io.js"></script>
+        <script src="/js/foundation5/vendor/jquery.js"></script>
+        <script src="/js/foundation5/foundation.min.js"></script>
+        <script src="/js/foundation5/vendor/fastclick.js"></script>
+        <script src="/js/foundation5/vendor/jquery.cookie.js"></script>
+        <script src="/js/foundation5/vendor/modernizr.js"></script>
+        <script src="/js/foundation5/vendor/placeholder.js"></script>
+        <!--SCRIPTS END-->
+      </body>
+      </html>
