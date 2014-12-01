@@ -1,3 +1,5 @@
+
+
 <div class="row">
 	<div class="large-12 columns">
 		<h1>Signup Form</h1>
@@ -6,36 +8,37 @@
 			<div class="row">
 				<div class="large-6 columns">
 					<label>Full name
-						<input type="text" placeholder="large-12.columns" />
+						<input type="text" name="name" placeholder="large-12.columns" />
 					</label>
 				</div>
 			</div>
 			<div class="row">
 				<div class="large-4 columns">
 					<label>Title
-						<input type="text" placeholder="large-4.columns" />
+						<input type="text" name="title" placeholder="large-4.columns" />
 					</label>
 				</div>
 				<div class="left large-4 columns">
 					<label> Email
-						<input type="email" placeholder="large-4.columns" />
+						<input type="email" name="email" placeholder="large-4.columns" />
 					</label>
 				</div>
 			</div>
 			<div class="row">
 				<div class="large-4 columns">
 					<label>Password
-						<input type="password" placeholder="large-4.columns" />
+						<input type="password" name="password" placeholder="large-4.columns" />
 					</label>
 				</div>
 				<div class="left large-4 columns">
 					<label> Confirm Password
-						<input type="password" placeholder="large-4.columns" />
+						<input type="password" name="confirm_password" placeholder="large-4.columns" />
 					</label>
 				</div>
 			</div>
 			<div class="row">
 				<div class="large-6 columns">
+ 					<input type='hidden' name='_csrf' value='<%= _csrf %>'>
 					<input type="submit" class="button" value="Submit">
 				</div>
 			</div>

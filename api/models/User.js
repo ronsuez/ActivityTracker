@@ -7,6 +7,8 @@
 
 module.exports = {
 
+  schema: true,
+  migrate: 'safe',
   attributes: {
   		name:{
   			type: 'string',
@@ -14,7 +16,6 @@ module.exports = {
   		},
   		title:{
   			type: 'string'
-
   		},
   		email:{
   			type: 'string',
