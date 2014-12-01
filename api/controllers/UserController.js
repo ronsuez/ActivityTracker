@@ -7,14 +7,26 @@
 
 module.exports = {
 	
+	'index': function (req, res){
+
+		User.find({}, function UserList(err, users){
+
+				if (err) return next(err);
+
+				res.view({
+					users: users
+				});
+
+		});
+	},
 	'new':function  (req,res) {
 		res.view();
 		// body...
-	},
+	}, 
+	 //CRUD functionality 
 	'create':function (req, res, next) {
 		
 		User.create(req.params.all(), function UserCreated(err, user){
-
 			//If there an error
 			if(err) {
 
@@ -32,9 +44,9 @@ module.exports = {
 		});
 	},
 	'show': function (req, res, next){
+		var userId = req.param('id');
 
-		User.findOne(req.param('id'), function FoundUser(err, user){
-
+		User.findOne(userId, function FoundUser(err, user){
 				if(err) return next(err);
 
 				if(!user) return next();
@@ -45,33 +57,48 @@ module.exports = {
 		});
 	},
 	'edit': function (req, res, next){
+		
+		var userId = req.param('id');
 
-		User.findOne(req.param('id'), function FoundUser(err, user){
-
+		User.findOne(userId, function FoundUser(err, user){
 				if(err) return next(err);
 
-				if(!user) return next();
+				if(!user) return next('User does not exists. ');
 
 				res.view({
 					user: user
 				});
 		});
 	},
-	'udpate': function (req, res, next){
+	'update': function (req, res, next){
 
 		var userId = req.param('id');
 		var formParams = req.params.all();
 
 		User.update(userId, formParams, function UpdatedUser(err){
-
 			if(err){
-				console.log(err);
 				res.redirect('/user/edit/' + userId);
 			}
-		console.log(userId);
-		res.redirect('/user/show/' +  userId);
-		});
 
+			res.redirect('/user/show/' +  userId);
+		});
+	},
+	'destroy': function(req, res, next){
+
+
+		var userId = req.param('id');
+
+		User.findOne(userId, function FoundUser(err, user){
+				if(err) return next(err);
+
+				if(!user) return next('User does not exists. ');
+
+				User.destroy(userId, function UserDeleted(err, user){
+					if(err) return next(err);
+				});
+
+				res.redirect('/user');
+		});
 	}
 };
 

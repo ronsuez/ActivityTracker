@@ -35,6 +35,10 @@ module.exports.routes = {
   '/': {
     view: 'static/index'
   },
+  '/user/index':{
+    controller:'UserController',
+    action: 'index'
+  },
   '/user/new':{
     view: 'user/new'
   },
@@ -49,7 +53,12 @@ module.exports.routes = {
   '/user/update':{
     controller: 'UserController',
     action: 'update'
+  },
+  '/user/destroy':{
+    controller: 'UserController',
+    action: 'destroy'
   }
+
 
   /***************************************************************************
   *                                                                          *

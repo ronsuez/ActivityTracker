@@ -1,0 +1,30 @@
+
+
+<div class="row">
+	<div class="large-12 columns">
+		<h1>Signup Form</h1>
+		<hr>
+		<form method="POST" action="/session/create">
+			<div class="row">
+				<div class="large-4 columns">
+					<label> Email
+						<input type="email" name="email" placeholder="Your email" />
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-4 columns">
+					<label>Password
+						<input type="password" name="password" placeholder="Your password" />
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-6 columns">
+ 					<input type='hidden' name='_csrf' value='<%= _csrf %>'>
+					<input type="submit" class="button" value="Login">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,41 @@
+<div class="row">
+	<div class="large-12 columns">
+		<h1>User List</h1>
+<br>
+<table>
+	<thead>
+		<tr>
+		<th>Title</th>
+		<th>Name</th>
+		<th>Email</th>
+		<th></th>
+		<th></th>
+		<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% _.each(users, function(user){ %>
+		<tr data-id="<%= user.id %>" data-model="user">
+			<td><%= user.title %></td>
+			<td><%= user.name %></td>
+			<td><%= user.email%></td>
+			<td>
+			<a href="/user/show/<%= user.id %>" class="success tiny button">View Profile</a>
+			</td>
+			<td>
+			<a href="/user/edit/<%= user.id %>" class="tiny button">Edit Info</a>
+			</td>
+			<td>
+			<form action="/user/destroy/<%= user.id %>" method="POST">
+				<input type="hidden" name="_method" value="delete">
+ 				<input type='hidden' name='_csrf' value='<%= _csrf %>'>	
+				<input type="submit" class="tiny alert button" value="Delete User">
+			</form>
+			</td>
+		</tr>
+		<%}) %>
+	</tbody>
+</table>
+	</div>
+</div>
+	
